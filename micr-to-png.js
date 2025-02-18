@@ -27,30 +27,6 @@ const generateMICRLinePng = (checkNumber, routingNumber, accountNumber) => {
 
 loadFont();
 
-/*
-
-const fs = require('fs');
-
-const writePng = (buffer) => {
-    try {
-        fs.writeFileSync('./results.png', buffer);
-
-        console.log('PNG file written as results.png.');
-    }
-    catch(e) {
-        console.log(e);
-    }
-}
-
-const test = (checkNumber, routingNumber, accountNumber) => {
-    const buffer = generateMICRLinePng(checkNumber, routingNumber, accountNumber);
-
-    writePng(buffer);
-}
-
-test('08675309', '121000248', '4942658782');
-*/
-
 module.exports = {
     loadFont,
     generateMICRLinePng,
