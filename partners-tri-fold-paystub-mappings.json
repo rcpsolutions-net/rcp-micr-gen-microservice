@@ -1315,27 +1315,7 @@
       "type": "$text",
       "dataKey": "EmpName",
       "exampleText": "Lawrence Jorge Ham III"
-    },
-    {
-      "x": 40,
-      "y": 305,
-      "width": 375.00000000000006,
-      "height": 22.500000000000004,
-      "source": "./images/mirc_line_example_generated.png",
-      "type": "$image",
-      "dataKey": "random_80",
-      "text": ""
-    },
-    {
-      "x": 395,
-      "y": 364,
-      "width": 75.8,
-      "height": 22.1,
-      "source": "./images/check_signature.png",
-      "type": "$image",
-      "dataKey": "random_77",
-      "text": ""
-    },    
+    },  
     {
       "key": "$CHECK_PAYEE_ADDRESS",
       "text": "",
