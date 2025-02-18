@@ -64,9 +64,11 @@ app.get('/api/rcp-solutions/sig', (req, res) => {
 app.get('/api/rcp-solutions/rcp/legacy/paystub/:checkNumber', async (req, res) => {
     const checkNumber = req.params.checkNumber;
   
+    /**
     if( !verifyKey(req) ) {
       return res.status(401).send('Unauthorized');
     }
+    **/
 
     let num = Number(checkNumber ?? null);
 
