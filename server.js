@@ -4,6 +4,7 @@ dotenv.config();
 
 const fs =  require('fs');
 const express = require('express');
+const cors = require('cors');
 const path = require('path')
 
 const pngImageFactory = require('./micr-to-png');
@@ -21,6 +22,8 @@ const verifyKey = (req) => {
 
     return key === process.env.RCP_API_KEY;
 }
+
+app.use(cors({ origin: '*' }));
 
 app.get('/api/rcp-solutions/micr-gen', (req, res) => {
 
