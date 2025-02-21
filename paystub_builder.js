@@ -626,7 +626,7 @@ const parseTemplateElements = (doc, page, form, template, sourceObject) => {
                 if( !el.header ) {
                     el.text = GetValueFromKey(sourceObject, el.dataKey, null, el);
 
-                    console.log('--- $text added from: ', el.text + ' for template element ' + el.key + el.dataKey);
+                    //console.log('--- $text added from: ', el.text + ' for template element ' + el.key + el.dataKey);
                 }
 
                 addText(page, el);              
@@ -640,13 +640,13 @@ const parseTemplateElements = (doc, page, form, template, sourceObject) => {
                 }
                 page.drawImage(pngImageMap[el.source], { x, y, width, height, opacity });
 
-                console.log('--- $image added: ', el.source);
+                //console.log('--- $image added: ', el.source);
             }
             else if( el.type === '$textField' ) {
                 if( !el.header ) {     
                     el.text = GetValueFromKey(sourceObject, el.dataKey, null, el);
 
-                    console.log('--- $textField added for: ', el.text + ' for template element ' + el.key + el.dataKey);
+                    //console.log('--- $textField added for: ', el.text + ' for template element ' + el.key + el.dataKey);
                 }
                 addFieldWithText(page, form, el);                
             }
@@ -665,7 +665,7 @@ const parseElements = (doc, page, form, elements) => {
                 if( !el.header ) {
                     el.text = GetValueFromKey(checkData, el.dataKey, null, el);
 
-                    console.log('--- $text added from: ', el.text + ' for element ' + el.dataKey);
+                    //console.log('--- $text added from: ', el.text + ' for element ' + el.dataKey);
                 }
                 addText(page, el);              
             }
@@ -674,15 +674,15 @@ const parseElements = (doc, page, form, elements) => {
 
                 page.drawImage(pngImageMap[el.source], { x, y, width, height, opacity });
 
-                console.log('--- $image added: ', el.source);
+               // console.log('--- $image added: ', el.source);
             }
             else if( el.type === '$textField' ) {
                 if( !el.header ) {
-                    console.log(el.dataKey);
+                    //console.log(el.dataKey);
 
                     el.text = GetValueFromKey(checkData, el.dataKey, null, el);
 
-                    console.log('--- $textField added for: ', el.text + ' for element ' + el.dataKey);
+                   // console.log('--- $textField added for: ', el.text + ' for element ' + el.dataKey);
                 }
                 addFieldWithText(page, form, el);                
             }
@@ -782,7 +782,7 @@ const createPDFFromJson = async (json) => {
                 if( pngBytes ) {
                     pngImageMap[png.filePath] = await doc.embedPng(pngBytes);
 
-                    console.log(`--- embedded PNG: ${png.filePath} ---`);
+                    //console.log(`--- embedded PNG: ${png.filePath} ---`);
                 }
             }
 
@@ -798,7 +798,7 @@ const createPDFFromJson = async (json) => {
             if( metadata.creator ) doc.setCreator(metadata.creator);
             if( metadata.producer ) doc.setProducer(metadata.producer);
 
-            console.log('--- metadata set ---');
+            //console.log('--- metadata set ---');
         }
 
         let [page] = await doc.copyPages(templateDoc, [0]);
@@ -878,7 +878,7 @@ const generatePDFByCheckNumber = async (options) => {
             let res = await getAccruedValueTotalUsedUpToCheckDate(SQLDate(checkData.CheckDate), checkData.AIdent, options.checkNumber);
 
             if( res?.recordset?.length > 0 ) {
-                console.log(res);
+                //console.log(res);
 
                 console.log(res?.recordset?.length + ' paycheck Accrue record(s) found for checkNumber');
                 checkData.totalAccrued = res.recordset;                          
