@@ -566,7 +566,7 @@ const GetValueFromKey = (data, key, formatFunc = null, el) => {
             break;
         case 'payrollTxns': val = data.payrollTxns || [];
         break;        
-        case 'SSN': val = 'xxx-xxxx-' + String(data.SSN || "xxx-xxx-xxxx").toString().substring(5, 9);
+        case 'SSN': val = 'xxx-xx-' + String(data.SSN || "xxx-xx-xxxx").toString().substring(5, 9);
         break;
         default: {
             if( val === undefined ) return null;
